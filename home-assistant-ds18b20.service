@@ -1,0 +1,11 @@
+[Unit]
+Description=Raspberry Pi DS18B20 Temperature Sensor Monitor for Home Assistant
+After=network-online.target
+ 
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/projects/home-assistant-ds18b20/home-assistant-ds18b20.py
+User=pi
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target

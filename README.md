@@ -10,7 +10,9 @@ The sensor name added to Home Assistant is the Host Name of the sensor, typicall
 
 This is expected to run on a Raspberry Pi - tested on both the Pi4 and Pi2.
 
-Connect a single DS18b20 1-Wire sensor to the Pi's 3V3, GPIO4 (pin 7) and GND pins, with a 4.7K resistor between 3V3 and GPIO4.
+Connect DS18b20 1-Wire sensor(s) to the Pi's 3V3, GPIO4 (pin 7) and GND pins, with a 4.7K resistor between 3V3 and GPIO4.
+
+Enable 1-wire.
 
 ## Installation
 
@@ -24,11 +26,29 @@ The only dependency is `paho-mqtt`:
 pip3 install paho-mqtt
 ```
 
-## Usage
-Run:
-
+Copy service file:
 ```bash
-python3 home-assistant-ds18b20.py
+sudo cp ./home-assistant-ds18b20.service /lib/systemd/system/
 ```
 
-As long as Home Assistant is already integrated wih your MQTT broker, a new temperature sensor will be registered with the name: ` `
+Reload the system manager:
+```bash
+sudo systemctl daemon-reload
+```
+
+Enable the service:
+```bash
+sudo systemctl enable home-assistant-ds18b20.service
+```
+
+Start the service
+```bash
+sudo systemctl start home-assistant-ds18b20.service
+```
+
+Check status:
+```bash
+sudo systemctl status home-assistant-ds18b20.service
+```
+
+As long as Home Assistant is already integrated wih your MQTT broker, a new temperature sensor will be registered with the name: `<HOSTNAME> temperature <SENSOR NUMBER>`

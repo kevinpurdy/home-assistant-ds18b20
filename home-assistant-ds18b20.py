@@ -41,7 +41,11 @@ def readTemperature():
 	return temperatures
 
 registerSensors()
+loopCount = 0
 while True:
+	loopCount += 1
+	if loopCount % 12 == 0:
+		registerSensors()
 	temperatures = readTemperature()
 	for sensor in temperatures:
 		client.publish(f"homeassistant/sensor/{room.lower()}/{sensor}/temperature", temperatures[sensor])
