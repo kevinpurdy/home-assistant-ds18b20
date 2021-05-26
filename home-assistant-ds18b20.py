@@ -3,7 +3,7 @@ import os
 import socket
 import json
 
-mqttBroker ="192.168.1.187" 
+mqttBroker ="192.168.1.185" 
 room = socket.gethostname()
 
 client = mqtt.Client(f"{room} Room Temperature")
