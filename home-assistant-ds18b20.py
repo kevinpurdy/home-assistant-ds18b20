@@ -3,7 +3,14 @@ import os
 import socket
 import json
 
-mqttBroker ="192.168.1.185" 
+import RPi.GPIO as GPIO
+
+#  Set Pullup mode on GPIO14 first.
+GPIO_PIN_NUMBER=14
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(GPIO_PIN_NUMBER, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+mqttBroker ="192.168.1.100" 
 room = socket.gethostname()
 
 client = mqtt.Client(f"{room} Room Temperature")
