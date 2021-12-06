@@ -41,8 +41,8 @@ def readTemperature():
 				line = sensorFile.readline()
 				temperatureRaw = line.split('=')[1]
 				temperatureRaw = temperatureRaw[:-1] # remove the line ending...
-				temperatures.update({sensor:int(temperatureRaw)/1000})
-				print(f"{sensor}: {int(temperatureRaw)/1000}")
+				temperatures.update({sensor:round(int(temperatureRaw)/1000,1)})
+				print(f"{sensor}: {round(int(temperatureRaw)/1000,1)}")
 			else:
 				print("Sensor file doesn't have a valid temperature!")
 	return temperatures
