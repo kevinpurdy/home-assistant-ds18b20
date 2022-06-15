@@ -5,7 +5,7 @@ After=network-online.target local-fs.target
 [Service]
 ExecStartPre=/bin/sleep 30
 ExecStart=/usr/bin/python3 /usr/bin/home-assistant-ds18b20.py
-User=pi
+User=root
 Restart=always
  
 [Install]
