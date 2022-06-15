@@ -4,7 +4,7 @@ After=network-online.target local-fs.target
  
 [Service]
 ExecStartPre=/bin/sleep 30
-ExecStart=/usr/bin/python3 /home/pi/projects/home-assistant-ds18b20/home-assistant-ds18b20.py
+ExecStart=/usr/bin/python3 /usr/bin/home-assistant-ds18b20.py
 User=pi
 Restart=always
  
