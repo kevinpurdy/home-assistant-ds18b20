@@ -1,0 +1,30 @@
+####################################################################
+# 1-Wire configuration
+1-wire:
+  # GPIO pin used for 1-wire bus, using GPIO/BCM naming convention
+  # See pinout.xyz for pin numbering info
+  gpio: 4
+  # Define whether an external 4.7k pull-up resistor is fitted
+  # Set to true if using an external 4.7k pull-up resistor
+  # If set to false, the script will enable the internal pull-up
+  external-pullup: false
+####################################################################
+# MQTT configuration
+mqtt:
+  # IP address of the MQTT broker
+  ip: localhost
+  # Username to be used with the MQTT broker
+  username: homeassistant
+  # Password to be used with the MQTT broker
+  password: mqttpass
+####################################################################
+# Sensor configuration
+sensor:
+  # Room name, sensor will be named: {room} temperature {count}
+  # If below line is left commented, hostname will be used
+  # room: office
+  # Registration frequency, sensors will be registered every nth sensor reading
+  registration-frequency: 10
+  # Reporting frequency in seconds
+  frequency: 30
+####################################################################
