@@ -10,7 +10,7 @@ This is expected to run on a Raspberry Pi - tested on both the Pi4 and Pi2.
 
 Connect DS18b20 1-Wire sensor(s) to the Raspberry Pi and enable 1-wire using the Raspberry Pi configuration tool.
 
-If you are using a non-standard GPIO pin for 1-wire, don't forget to specify the GPIO pin in `config.txt`, e.g: `dtoverlay=w1-gpio,gpiopin=14`
+If you are using a non-standard GPIO pin for 1-wire, don't forget to specify the GPIO pin in `home-assistant-ds18b20.yaml`, e.g: `dtoverlay=w1-gpio,gpiopin=14`
 
 ## Installation
 
